@@ -209,7 +209,7 @@ include_directories(
 # catkin_add_nosetests(test)
 
 ## Declarar el ejecutable del nodo talker
-add_executable(robot_ws src/base_node.cpp src/roboclaw.cpp)
+add_executable(robot_ws src/base_node2.cpp src/roboclaw.cpp)
 
 ## Declarar el ejecutable del nodo listener
 ##add_executable(listener src/listener.cpp)
