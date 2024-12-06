@@ -209,7 +209,7 @@ include_directories(
 # catkin_add_nosetests(test)
 
 ## Declarar el ejecutable del nodo talker
-add_executable(robot_ws src/base_node3.cpp src/roboclaw.cpp)
+add_executable(robot_ws src/base_node4.cpp src/roboclaw.cpp)
 
 ## Declarar el ejecutable del nodo listener
 ##add_executable(listener src/listener.cpp)
@@ -217,6 +217,9 @@ add_executable(robot_ws src/base_node3.cpp src/roboclaw.cpp)
 ## Asegurar que los nodos dependen de los targets generados
 
 add_dependencies(robot_ws ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+add_executable(square_node src/square_node.cpp)
+
 
 ##add_dependencies(taker ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 ##add_dependencies(listener ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
@@ -227,6 +230,8 @@ target_link_libraries(robot_ws
   ${Boost_LIBRARIES}
   /opt/ros/noetic/lib/libserial.so
 )
+
+target_link_libraries(square_node ${catkin_LIBRARIES})
 
 ##target_link_libraries(listener
 ##  ${catkin_LIBRARIES}
